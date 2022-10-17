@@ -20,8 +20,8 @@ import java.util.List;
 @Setter
 public class Facturaproveedor extends Base{
 
-    @Column(name = "N_factura")
-    private String N_factura;
+    @Column(name = "n_factura")
+    private String n_factura;
 
     @Column(name = "fecha_compra",nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
@@ -31,10 +31,4 @@ public class Facturaproveedor extends Base{
     @ManyToMany(cascade = CascadeType.PERSIST)
     private List<ProductosProv> productos_prov = new ArrayList<ProductosProv>();
 
-    /*
-    @ManyToOne(fetch = FetchType.LAZY,optional = false,cascade = CascadeType.PERSIST)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) //para evitar el error(lazy initialization exception) de serialization
-    @JoinColumn(name = "proveedor",nullable = false)
-    private Proveedores proveedor;
-  */
 }
