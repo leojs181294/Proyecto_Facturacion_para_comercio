@@ -1,0 +1,48 @@
+	PROVEEDORES
+http://localhost:8080/proveedores
+http://localhost:8080/proveedores/{ID}
+http://localhost:8080/proveedores/proveedor/{NOMBRE}
+http://localhost:8080/proveedores/distribuidora/{DISTRIBUIDORA}
+
+	FACTURA PROVEEDOR
+http://localhost:8080/factproveedor
+http://localhost:8080/factproveedor/{ID}
+
+	PRODUCTOS PROVEEDOR
+http://localhost:8080/productos_prov
+http://localhost:8080/productos_prov/{ID}
+
+	MARCAS
+http://localhost:8080/marcas
+http://localhost:8080/marcas/{ID}
+http://localhost:8080/marcas/nom/{NOMBRE}
+
+	PRODUCTOS
+http://localhost:8080/productos
+http://localhost:8080/productos/{ID}
+http://localhost:8080/productos/{DESCRIPCION}
+
+	STOCK
+http://localhost:8080/stock
+http://localhost:8080/stock/{ID}
+
+	VENDEDOR
+http://localhost:8080/vendedor
+http://localhost:8080/vendedor/{ID}
+http://localhost:8080/vendedor/nom/{NOMBRE}
+
+	METODO DE PAGO
+http://localhost:8080/metodo_pago
+http://localhost:8080/metodo_pago/{ID}
+
+	VENTA
+http://localhost:8080/venta
+http://localhost:8080/venta/{ID}
+
+	DETALLE DE VENTA
+http://localhost:8080/detalle_venta
+http://localhost:8080/detalle_venta/{ID}
+
+	FACTURA DE VENTA
+http://localhost:8080/factura_venta
+http://localhost:8080/factura_venta/{ID}
