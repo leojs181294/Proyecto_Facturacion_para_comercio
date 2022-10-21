@@ -40,5 +40,5 @@ public class Venta extends Base{
             name = "detalle_productos_venta",
             joinColumns = @JoinColumn(name = "venta"),
             inverseJoinColumns = @JoinColumn(name = "productos"))
-    private List<DetalleVenta> detalleventas = new ArrayList<DetalleVenta>();
+    private List<DetalleVenta> detalleventas = new ArrayList<>();
 }

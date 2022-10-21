@@ -1,7 +1,6 @@
 package ventas.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +28,6 @@ public class Facturaproveedor extends Base{
 
 //desde la factura se generan los productosProv
     @ManyToMany(cascade = CascadeType.PERSIST)
-    private List<ProductosProv> productos_prov = new ArrayList<ProductosProv>();
+    private List<ProductosProv> productos_prov = new ArrayList<>();
 
 }

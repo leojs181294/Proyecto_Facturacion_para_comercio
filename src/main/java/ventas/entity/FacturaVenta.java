@@ -19,8 +19,5 @@ public class FacturaVenta extends Base{
     @Column(name = "fecha_compra",nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime fechacompra=LocalDateTime.now();
-/*
-    @OneToOne(mappedBy = "factura")
-    private Venta venta;
-*/
+
 }

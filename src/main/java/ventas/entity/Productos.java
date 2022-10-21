@@ -36,8 +36,5 @@ public class Productos extends Base{
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)//para evitar el error(lazy initialization exception) de serialization
     @JoinColumn (name = "Marcas ")
     private Marcas Marcas;
-
-    @ManyToMany(mappedBy = "productos")
-    private List<Carrito> carrito = new ArrayList<Carrito>();
 */
 }

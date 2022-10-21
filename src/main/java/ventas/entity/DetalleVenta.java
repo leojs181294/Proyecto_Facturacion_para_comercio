@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "detalle_venta")
@@ -22,10 +20,7 @@ public class DetalleVenta extends Base{
 
     @Column(name = "cantidad",nullable = false)
     private Integer cantidad;
-/*
-    @ManyToMany()
-    private List<Productos> productos = new ArrayList<Productos>();
-*/
+
     @ManyToOne()
     @JoinColumn(name = "producto")
     private Productos producto;
