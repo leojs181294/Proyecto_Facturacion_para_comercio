@@ -9,7 +9,7 @@ import ventas.repository.ProveedoresRepository;
 import java.util.List;
 
 @Service
-public class ProveedoresServiceImpl extends BaseServiceImpl<Proveedores,Long> {
+public class ProveedoresServiceImpl extends BaseServiceImpl<Proveedores,Long> implements ProveedoresService {
     @Autowired
     private final ProveedoresRepository proveedoresRepository;
 

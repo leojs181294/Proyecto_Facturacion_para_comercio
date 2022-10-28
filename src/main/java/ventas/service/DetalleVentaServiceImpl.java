@@ -8,6 +8,8 @@ import ventas.repository.DetalleVentaRepository;
 
 @Service
 public class DetalleVentaServiceImpl extends BaseServiceImpl<DetalleVenta,Long> {
+
+
     @Autowired
     private DetalleVentaRepository detalleventaRepository;
     //      GENERAMOS EL CONSTRUCTOR
