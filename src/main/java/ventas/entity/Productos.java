@@ -1,6 +1,9 @@
 package ventas.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,16 +19,15 @@ import javax.persistence.*;
 @Setter
 public class Productos extends Base{
 
+
     @Column(name = "descripcion",length = 100,nullable = false)
     private String descripcion;
 
     @Column(name = "precio_unitario",nullable = false)
     private Float precio_unitario;
 
-    //desde el producto le generamos el stock
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "stock")
-    private Stock stock;
+    @Column(name = "stock",nullable = false)
+    private Integer stock;
 
     //primero debe estar creada la marca
     @ManyToOne(cascade = CascadeType.REFRESH)
