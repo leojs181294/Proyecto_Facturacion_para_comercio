@@ -20,8 +20,10 @@ public class Venta extends Base{
     @Column(name = "cantidad_productos", nullable = false)
     private Integer cantidad;
 
-    @Column(name = "precio_total", nullable = false)
-    private Float precio_total;
+    @Column(name = "precio_final", nullable = false)
+    private Double precio_final;
+
+
     //se crea de la venta
     @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name = "factura")
@@ -41,4 +43,13 @@ public class Venta extends Base{
             joinColumns = @JoinColumn(name = "venta"),
             inverseJoinColumns = @JoinColumn(name = "productos"))
     private List<DetalleVenta> detalleventas = new ArrayList<>();
+
+    public double getPrecio_final() {
+        double total = 00.00;
+
+        for(DetalleVenta detalleVenta: detalleventas) {
+            total += detalleVenta.getprecio_total();
+        }
+        return total;
+    }
 }
