@@ -19,13 +19,6 @@ import javax.validation.constraints.Size;
 @Setter
 public class DetalleVenta extends Base{
 
-    private String codigo;
-    private String descripcion;
-    private Double precio_unitario;
-/*
-    @Column(name = "precio_total",nullable = false)
-    private Float precio_total;
-*/
     @Column(name = "cantidad",nullable = false)
     private Integer cantidad;
 

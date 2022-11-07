@@ -17,13 +17,6 @@ import java.util.List;
 @Setter
 public class Venta extends Base{
 
-    @Column(name = "cantidad_productos", nullable = false)
-    private Integer cantidad;
-
-    @Column(name = "precio_final", nullable = false)
-    private Double precio_final;
-
-
     //se crea de la venta
     @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name = "factura")
@@ -51,5 +44,13 @@ public class Venta extends Base{
             total += detalleVenta.getprecio_total();
         }
         return total;
+    }
+    public Integer getCantidad_total() {
+        Integer cantidad = 0;
+
+        for(DetalleVenta detalleVenta: detalleventas) {
+            cantidad += detalleVenta.getCantidad();
+        }
+        return cantidad;
     }
 }
