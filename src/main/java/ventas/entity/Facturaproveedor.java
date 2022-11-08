@@ -30,4 +30,7 @@ public class Facturaproveedor extends Base{
     @ManyToMany(cascade = CascadeType.PERSIST)
     private List<ProductosProv> productos_prov = new ArrayList<>();
 
+    @ManyToOne
+    private Proveedores proveedores;
+
 }

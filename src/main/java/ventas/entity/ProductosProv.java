@@ -18,13 +18,15 @@ public class ProductosProv extends Base{
     @Column(name = "cantidad",nullable = false)
     private Integer cantidad;
     @Column(name = "precio_costo",nullable = false)
-    private Float precio_costo;
-    @Column(name = "precio_total",nullable = false)
-    private Float precio_total;
+    private Double precio_costo;
 
     //tiene que estar el producto creado para poder asignarlo
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne()
     @JoinColumn(name = "id_producto")
     private Productos productos;
+
+    public Double getprecio_total() {
+        return cantidad.doubleValue()*precio_costo;
+    }
 
 }

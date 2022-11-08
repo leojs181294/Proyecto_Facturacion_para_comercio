@@ -8,8 +8,6 @@ import lombok.Setter;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "proveedores")
@@ -29,11 +27,4 @@ public class Proveedores extends Base {
 
     @Column(name = "direccion", length = 50)
     private String direccion;
-//desde proveedores se puede generar una nueva factura
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "facturas_del_proveedor",
-            joinColumns = @JoinColumn(name = "proveedores"),
-            inverseJoinColumns = @JoinColumn(name = "factura"))
-    private List<Facturaproveedor> facturaProveedor = new ArrayList<Facturaproveedor>();
 }
