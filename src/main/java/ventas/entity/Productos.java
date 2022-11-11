@@ -30,14 +30,14 @@ public class Productos extends Base{
     @Column(name = "descripcion",length = 100,nullable = false)
     private String descripcion;
 
-    @NotNull(message = "Debes especificar el precio")
+    /*@NotNull(message = "Debes especificar el precio")*/
     @Min(value = 0, message = "El precio mínimo es 0")
-    @Column(name = "precio_unitario",nullable = false)
+    @Column(name = "precio_unitario")
     private Double precio_unitario;
 
-    @NotNull(message = "Debes especificar el stock")
+    /*@NotNull(message = "Debes especificar el stock")*/
     @Min(value = 0, message = "El stock mínimo es 0")
-    @Column(name = "stock",nullable = false)
+    @Column(name = "stock")
     private Integer stock;
 
     //primero debe estar creada la marca
@@ -45,6 +45,7 @@ public class Productos extends Base{
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)//para evitar el error(lazy initialization exception) de serialization
     @JoinColumn(name = "marcas")
     private Marcas marcas;
+
 
     public boolean sinStock() {
         return this.stock <= 0;

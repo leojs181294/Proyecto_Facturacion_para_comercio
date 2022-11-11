@@ -20,6 +20,9 @@ public class ProductosProv extends Base{
     @Column(name = "precio_costo",nullable = false)
     private Double precio_costo;
 
+    @Column(name = "porcentaje_venta",nullable = false)
+    private Double porcentaje_venta;
+
     //tiene que estar el producto creado para poder asignarlo
     @ManyToOne()
     @JoinColumn(name = "id_producto")
@@ -28,5 +31,4 @@ public class ProductosProv extends Base{
     public Double getprecio_total() {
         return cantidad.doubleValue()*precio_costo;
     }
-
 }
