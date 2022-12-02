@@ -32,5 +32,13 @@ public class Facturaproveedor extends Base{
 
     @ManyToOne
     private Proveedores proveedores;
+    public double getPrecio_final() {
+        double total = 00.00;
+
+        for(ProductosProv productosProv: productos_prov) {
+            total += productosProv.getprecio_total();
+        }
+        return total;
+    }
 
 }
