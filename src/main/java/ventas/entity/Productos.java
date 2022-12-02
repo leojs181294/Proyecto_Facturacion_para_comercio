@@ -46,14 +46,8 @@ public class Productos extends Base{
     @JoinColumn(name = "marcas")
     private Marcas marcas;
 
-
-    public boolean sinStock() {
-        return this.stock <= 0;
-    }
     public void restarStock(Integer stock) {
         this.stock -= stock;
     }
-    public void sumarStock(Integer stock) {
-        this.stock += stock;
-    }
+
 }

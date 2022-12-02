@@ -11,4 +11,9 @@ public interface VendedorRepository extends BaseRepository<Vendedor,Long> {
     @Query(value = "SELECT * FROM ventas.vendedor WHERE vendedor.nombre LIKE %:nombre%",
             nativeQuery = true)
     List<Vendedor> findByNombre(String nombre) throws Exception;
+
+    @Query(value = "SELECT * FROM ventas.vendedor WHERE vendedor.username LIKE %:username%",
+            nativeQuery = true)
+    List<Vendedor> findByUsername(String username) throws Exception;
+
 }

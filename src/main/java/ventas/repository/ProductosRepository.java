@@ -2,8 +2,8 @@ package ventas.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import ventas.entity.Marcas;
 import ventas.entity.Productos;
+import ventas.entity.Marcas;
 
 import java.util.List;
 
@@ -16,6 +16,6 @@ public interface ProductosRepository extends BaseRepository<Productos,Long> {
     List<Productos> findByDescripcion(String descripcion) throws Exception;
     @Query(value = "SELECT * FROM ventas.productos WHERE productos.marcas =id",
             nativeQuery = true)
-    public List<Marcas> findAllMarcas(Long id);
+    List<Marcas> findAllMarcas(Long id);
     Productos findByCodigo(String codigo) throws Exception;
 }

@@ -7,9 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "detalle_venta")
@@ -31,7 +28,4 @@ public class DetalleVenta extends Base{
         return cantidad.doubleValue()*producto.getPrecio_unitario();
     }
 
-    public void aumentarCantidad() {
-        this.cantidad++;
-    }
 }

@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface MarcasRepository extends BaseRepository<Marcas,Long> {
-
     @Query(value = "SELECT * FROM ventas.marcas WHERE marcas.nombre LIKE %:nombre%",
             nativeQuery = true)
     List<Marcas> findByNombre(String nombre) throws Exception;

@@ -37,8 +37,5 @@ public class ProductosController extends BaseControllerImpl<Productos, Productos
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Intente mas tarde.\"}");
         }
     }
-    @GetMapping("/marcas/{id}")
-    public List<Marcas> listarMarcas(Long id) {
-        return productosService.findAllMarcas(id);
-    }
+
 }

@@ -6,8 +6,6 @@ import ventas.entity.FacturaVenta;
 import ventas.repository.BaseRepository;
 import ventas.repository.FacturaVentaRepository;
 
-import java.util.List;
-
 @Service
 public class FacturaVentaServiceImpl extends BaseServiceImpl<FacturaVenta,Long>{
     @Autowired
@@ -15,12 +13,5 @@ public class FacturaVentaServiceImpl extends BaseServiceImpl<FacturaVenta,Long>{
     public FacturaVentaServiceImpl(BaseRepository<FacturaVenta, Long> baseRepository) {
         super(baseRepository);
     }
-/*
-    public List<FacturaVenta> getFecha(String fecha_compra) throws Exception {
-        try {
-            return facturaVentaRepository.findByFecha(fecha_compra);
-        }catch (Exception e){
-            throw new Exception(e.getMessage());
-        }
-    }*/
+
 }

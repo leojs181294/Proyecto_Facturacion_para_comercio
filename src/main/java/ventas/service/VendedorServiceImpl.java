@@ -26,4 +26,11 @@ public class VendedorServiceImpl extends BaseServiceImpl<Vendedor,Long> {
             throw new Exception(e.getMessage());
         }
     }
+    public List<Vendedor> getUsername(String username) throws Exception {
+        try {
+            return vendedorRepository.findByUsername(username);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
 }

@@ -27,5 +27,12 @@ public class VendedorController extends BaseControllerImpl<Vendedor, VendedorSer
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Vendedor no encontrado\"}");
         }
     }
-
+    @GetMapping("/user/{username}")
+    public ResponseEntity<?> getUsername(@PathVariable("username")String username){
+        try {
+            return ResponseEntity.status((HttpStatus.OK)).body(vendedorService.getUsername(username));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Vendedor no encontrado\"}");
+        }
+    }
 }
